@@ -14,6 +14,8 @@ Plugin 'vim-scripts/ScrollColors'
 Plugin 'oblitum/rainbow'
 Plugin 'flazz/vim-colorschemes'
 
+Plugin 'scala/scala-dist', {'rtp': 'tool-support/src/vim'}
+
 "All of your Plugins must be added before the following line"
 call vundle#end()
 filetype plugin indent on    " required
@@ -104,3 +106,8 @@ noremap <silent><expr>N v:searchforward ? "N" : "n"
 
 "show powerline even when only one file is being edited"
 set laststatus=2
+
+"transparency!!!"
+if has("gui_running")
+    set transparency=15
+endif
