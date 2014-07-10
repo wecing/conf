@@ -15,6 +15,7 @@ Plugin 'oblitum/rainbow'
 Plugin 'flazz/vim-colorschemes'
 
 Plugin 'scala/scala-dist', {'rtp': 'tool-support/src/vim'}
+Plugin 'solarnz/thrift.vim'
 
 "All of your Plugins must be added before the following line"
 call vundle#end()
