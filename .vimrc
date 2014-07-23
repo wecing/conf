@@ -25,8 +25,12 @@ filetype plugin indent on    " required
 
 "Powerline font patch"
 let g:airline_powerline_fonts = 1
-if has("gui_running") && system("uname") == "Darwin\n"
-    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
+if g:airline_powerline_fonts
+    if system("uname") == "Darwin\n"
+        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
+    else
+        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+    endif
 endif
 
 "enable rainbow globally"
@@ -66,12 +70,9 @@ set guioptions-=r "scroll bar"
 "shell-like command completion"
 set wildmode=longest:list,full
 
-"color scheme and font under linux"
+"color scheme under linux"
 if has('gui_running')
     colorscheme candycode
-    if has('gui_gtk2')
-        set guifont=Monospace\ 9
-    endif
 else
     "vibrantink tir_black slate mustang"
     colorscheme vibrantink
@@ -109,6 +110,6 @@ noremap <silent><expr>N v:searchforward ? "N" : "n"
 set laststatus=2
 
 "transparency!!!"
-if has("gui_running")
+if has("gui_running") && system("uname") == "Darwin\n"
     set transparency=15
 endif
