@@ -8,6 +8,8 @@ call vundle#begin()
 "Keep Plugin commands between vundle#begin/end."
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'Valloric/YouCompleteMe'
+
 Plugin 'bling/vim-airline'
 Plugin 'wecing/snipmate.vim'
 Plugin 'vim-scripts/ScrollColors'
@@ -113,3 +115,9 @@ set laststatus=2
 if has("gui_running") && system("uname") == "Darwin\n"
     set transparency=15
 endif
+
+"YCM, stop asking"
+let g:ycm_confirm_extra_conf = 0
+"YCM, don't leave the preview window open"
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
