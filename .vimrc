@@ -49,9 +49,9 @@ let g:airline#extensions#tabline#enabled = 1
 "tab stuff"
 set expandtab
 autocmd FileType make setlocal noexpandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
 "copy indention of current line to the next line"
 set autoindent
