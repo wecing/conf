@@ -16,6 +16,7 @@ Plugin 'flazz/vim-colorschemes'
 
 Plugin 'scala/scala-dist', {'rtp': 'tool-support/src/vim'}
 Plugin 'solarnz/thrift.vim'
+Plugin 'juvenn/mustache.vim'
 
 "All of your Plugins must be added before the following line"
 call vundle#end()
@@ -45,9 +46,9 @@ let g:airline#extensions#tabline#enabled = 1
 "tab stuff"
 set expandtab
 autocmd FileType make setlocal noexpandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 "copy indention of current line to the next line"
 set autoindent
