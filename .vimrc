@@ -142,3 +142,6 @@ if has("gui_running")
 else
   highlight ColorColumn ctermbg=DarkGrey
 endif
+
+"show preview window at the bottom."
+set splitbelow
