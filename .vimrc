@@ -8,8 +8,7 @@ call vundle#begin()
 "Keep Plugin commands between vundle#begin/end."
 Plugin 'gmarik/Vundle.vim'
 
-"oh god, homebrew Python"
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'bling/vim-airline'
 Plugin 'wecing/snipmate.vim'
@@ -17,6 +16,7 @@ Plugin 'vim-scripts/ScrollColors'
 Plugin 'oblitum/rainbow'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
+Plugin 'embear/vim-localvimrc'
 
 Plugin 'scala/scala-dist', {'rtp': 'tool-support/src/vim'}
 Plugin 'solarnz/thrift.vim'
@@ -126,11 +126,14 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "open NERDTree on vim startup, if no file is specified"
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-"close NERDTree it it's the only window open"
+"close NERDTree if it's the only window open"
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+"use F1 to toggle NERDTree"
+nmap <F1> :NERDTreeToggle<CR>
 
 "no more than 80 chars each line"
 set colorcolumn=80
