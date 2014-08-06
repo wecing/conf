@@ -145,3 +145,6 @@ endif
 
 "show preview window at the bottom."
 set splitbelow
+
+"don't ask, just load local vimrc"
+let g:localvimrc_ask = 0
