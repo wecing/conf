@@ -17,6 +17,7 @@ Plugin 'oblitum/rainbow'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'embear/vim-localvimrc'
+Bundle 'Lokaltog/vim-easymotion'
 
 Plugin 'scala/scala-dist', {'rtp': 'tool-support/src/vim'}
 Plugin 'solarnz/thrift.vim'
