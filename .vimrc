@@ -145,7 +145,9 @@ else
 endif
 
 "show preview window at the bottom."
-set splitbelow
+"set splitbelow
+"diable preview window"
+set completeopt-=preview
 
 "don't ask, just load local vimrc"
 let g:localvimrc_ask = 0

@@ -6,7 +6,8 @@ flags = [
     '-W',
     '-std=c++11',
     '-stdlib=libc++',
-    '-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1'
+    # '-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/c++/v1'
+    '-isystem/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1'
 ]
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
