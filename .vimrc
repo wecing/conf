@@ -19,6 +19,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'embear/vim-localvimrc'
 Bundle 'Lokaltog/vim-easymotion'
 
+Plugin 'wting/rust.vim'
 Plugin 'scala/scala-dist', {'rtp': 'tool-support/src/vim'}
 Plugin 'solarnz/thrift.vim'
 Plugin 'juvenn/mustache.vim'
