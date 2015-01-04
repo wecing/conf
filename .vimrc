@@ -8,7 +8,8 @@ call vundle#begin()
 "Keep Plugin commands between vundle#begin/end."
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe'
+"pain in the ass."
+"Plugin 'Valloric/YouCompleteMe'"
 
 Plugin 'bling/vim-airline'
 Plugin 'wecing/snipmate.vim'
