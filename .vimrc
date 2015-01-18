@@ -23,7 +23,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Plugin 'wting/rust.vim'
 Plugin 'scala/scala-dist', {'rtp': 'tool-support/src/vim'}
 Plugin 'solarnz/thrift.vim'
-Plugin 'juvenn/mustache.vim'
 
 "All of your Plugins must be added before the following line"
 call vundle#end()
