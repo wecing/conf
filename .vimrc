@@ -12,7 +12,6 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'Valloric/YouCompleteMe'"
 
 Plugin 'bling/vim-airline'
-Plugin 'wecing/snipmate.vim'
 Plugin 'vim-scripts/ScrollColors'
 Plugin 'oblitum/rainbow'
 Plugin 'flazz/vim-colorschemes'
