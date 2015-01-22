@@ -20,8 +20,9 @@ Plugin 'embear/vim-localvimrc'
 Bundle 'Lokaltog/vim-easymotion'
 
 Plugin 'wting/rust.vim'
-Plugin 'scala/scala-dist', {'rtp': 'tool-support/src/vim'}
+Plugin 'scala/scala-tool-support', {'rtp': 'tool-support/vim'}
 Plugin 'solarnz/thrift.vim'
+Plugin 'dart-lang/dart-vim-plugin'
 
 "All of your Plugins must be added before the following line"
 call vundle#end()
