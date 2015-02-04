@@ -17,7 +17,10 @@ Plugin 'oblitum/rainbow'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'embear/vim-localvimrc'
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
+
+"Plugin 'Shougo/vimproc'
+"Plugin 'Shougo/vimshell.vim'
 
 Plugin 'wting/rust.vim'
 Plugin 'scala/scala-tool-support', {'rtp': 'tool-support/vim'}
@@ -79,10 +82,15 @@ set wildmode=longest:list,full
 
 "color scheme under linux"
 if has('gui_running')
-    colorscheme candycode
+    "colorscheme candycode
+    "colorscheme mustang
+    set background=dark
+    colorscheme solarized
 else
-    "vibrantink tir_black slate mustang"
-    colorscheme vibrantink
+    "vibrantink tir_black slate mustang up"
+    "colorscheme mustang
+    set background=dark
+    colorscheme solarized
 endif
 
 "enable usage of mouse"
@@ -117,9 +125,9 @@ noremap <silent><expr>N v:searchforward ? "N" : "n"
 set laststatus=2
 
 "transparency!!!"
-if has("gui_running") && system("uname") == "Darwin\n"
-    set transparency=15
-endif
+"if has("gui_running") && system("uname") == "Darwin\n"
+"    set transparency=15
+"endif
 
 "YCM, stop asking"
 let g:ycm_confirm_extra_conf = 0
@@ -139,11 +147,11 @@ nmap <F1> :NERDTreeToggle<CR>
 
 "no more than 80 chars each line"
 set colorcolumn=80
-if has("gui_running")
-  highlight ColorColumn guibg=#101010
-else
-  highlight ColorColumn ctermbg=DarkGrey
-endif
+"if has("gui_running")
+"  highlight ColorColumn guibg=#101010
+"else
+"  highlight ColorColumn ctermbg=DarkGrey
+"endif
 
 "show preview window at the bottom."
 "set splitbelow
