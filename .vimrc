@@ -89,6 +89,7 @@ if has('gui_running')
 else
     "vibrantink tir_black slate mustang up"
     "colorscheme mustang
+    "let g:solarized_termtrans=1
     set background=dark
     colorscheme solarized
 endif
