@@ -10,10 +10,10 @@ Plugin 'gmarik/Vundle.vim'
 
 "pain in the ass."
 "Plugin 'Valloric/YouCompleteMe'"
+"Plugin 'oblitum/rainbow'
 
 Plugin 'bling/vim-airline'
 Plugin 'vim-scripts/ScrollColors'
-Plugin 'oblitum/rainbow'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'embear/vim-localvimrc'
@@ -43,8 +43,8 @@ if g:airline_powerline_fonts
     endif
 endif
 
-"enable rainbow globally"
-let g:rainbow_active = 1
+" "enable rainbow globally"
+" let g:rainbow_active = 1"
 
 "syntax highlighting"
 syntax on
@@ -125,20 +125,20 @@ noremap <silent><expr>N v:searchforward ? "N" : "n"
 "show powerline even when only one file is being edited"
 set laststatus=2
 
-"transparency!!!"
-"if has("gui_running") && system("uname") == "Darwin\n"
-"    set transparency=15
-"endif
+" "transparency!!!"
+" if has("gui_running") && system("uname") == "Darwin\n"
+"     set transparency=15
+" endif
 
-"YCM, stop asking"
-let g:ycm_confirm_extra_conf = 0
-"YCM, don't leave the preview window open"
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
+" "YCM, stop asking"
+" let g:ycm_confirm_extra_conf = 0
+" "YCM, don't leave the preview window open"
+" let g:ycm_autoclose_preview_window_after_completion = 1
+" let g:ycm_autoclose_preview_window_after_insertion = 1
 
-"open NERDTree on vim startup, if no file is specified"
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" "open NERDTree on vim startup, if no file is specified"
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "close NERDTree if it's the only window open"
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -161,3 +161,14 @@ set completeopt-=preview
 
 "don't ask, just load local vimrc"
 let g:localvimrc_ask = 0
+
+"escape from insert mode instantely"
+"see: http://usevim.com/2013/07/24/powerline-escape-fix/"
+if !has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
