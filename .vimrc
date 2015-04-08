@@ -49,8 +49,8 @@ endif
 "syntax highlighting"
 syntax on
 
-"airline+tabline for replacing the GUI tab bar"
-let g:airline#extensions#tabline#enabled = 1
+" "airline+tabline for replacing the GUI tab bar"
+" let g:airline#extensions#tabline#enabled = 1
 
 "tab stuff"
 set expandtab
