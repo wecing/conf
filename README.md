@@ -8,8 +8,8 @@ then inside vim, run `:PluginInstall`
 
 	git clone https://github.com/Lokaltog/powerline-fonts.git
 
-### Solarized for Terminal.cpp
-    
+### Solarized for Terminal.app
+
 copied from `https://github.com/tomislav/osx-terminal.app-colors-solarized`
 
 
