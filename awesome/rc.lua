@@ -169,6 +169,96 @@ mytasklist.buttons = awful.util.table.join(
                                               if client.focus then client.focus:raise() end
                                           end))
 
+local emoji = {
+    "|∀ﾟ",
+    "(´ﾟДﾟ`)",
+    "(;´Д`)",
+    "(｀･ω･)",
+    "(=ﾟωﾟ)=",
+    "| ω・´)",
+    "|-` )",
+    "|д` )",
+    "|ー` )",
+    "|∀` )",
+    "(つд⊂)",
+    "(ﾟДﾟ≡ﾟДﾟ)",
+    "(＾o＾)ﾉ",
+    "(|||ﾟДﾟ)",
+    "( ﾟ∀ﾟ)",
+    "( ´∀`)",
+    "(*´∀`)",
+    "(*ﾟ∇ﾟ)",
+    "(*ﾟーﾟ)",
+    "(　ﾟ 3ﾟ)",
+    "( ´ー`)",
+    "( ・_ゝ・)",
+    "( ´_ゝ`)",
+    "(*´д`)",
+    "(・ー・)",
+    "(・∀・)",
+    "(ゝ∀･)",
+    "(〃∀〃)",
+    "(*ﾟ∀ﾟ*)",
+    "( ﾟ∀。)",
+    "( `д´)",
+    "(`ε´ )",
+    "(`ヮ´ )",
+    "σ`∀´)",
+    " ﾟ∀ﾟ)σ",
+    "ﾟ ∀ﾟ)ノ",
+    "(╬ﾟдﾟ)",
+    "(|||ﾟдﾟ)",
+    "( ﾟдﾟ)",
+    "Σ( ﾟдﾟ)",
+    "( ;ﾟдﾟ)",
+    "( ;´д`)",
+    "(　д ) ﾟ ﾟ",
+    "( ☉д⊙)",
+    "(((　ﾟдﾟ)))",
+    "( ` ・´)",
+    "( ´д`)",
+    "( -д-)",
+    "(>д<)",
+    "･ﾟ( ﾉд`ﾟ)",
+    "( TдT)",
+    "(￣∇￣)",
+    "(￣3￣)",
+    "(￣ｰ￣)",
+    "(￣ . ￣)",
+    "(￣皿￣)",
+    "(￣艸￣)",
+    "(￣︿￣)",
+    "(￣︶￣)",
+    "ヾ(´ωﾟ｀)",
+    "(*´ω`*)",
+    "(・ω・)",
+    "( ´・ω)",
+    "(｀・ω)",
+    "(´・ω・`)",
+    "(`・ω・´)",
+    "( `_っ´)",
+    "( `ー´)",
+    "( ´_っ`)",
+    "( ´ρ`)",
+    "( ﾟωﾟ)",
+    "(oﾟωﾟo)",
+    "(　^ω^)",
+    "(｡◕∀◕｡)",
+    "/( ◕‿‿◕ )\\",
+    "ヾ(´ε`ヾ)",
+    "(ノﾟ∀ﾟ)ノ",
+    "(σﾟдﾟ)σ",
+    "(σﾟ∀ﾟ)σ",
+    "|дﾟ )",
+    "┃電柱┃",
+    "ﾟ(つд`ﾟ)",
+    "ﾟÅﾟ )　",
+    "⊂彡☆))д`)",
+    "⊂彡☆))д´)",
+    "⊂彡☆))∀`)",
+    "(´∀((☆ミつ"
+}
+
 for s = 1, screen.count() do
     -- Create a promptbox for each screen
     mypromptbox[s] = awful.widget.prompt()
@@ -198,12 +288,16 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     -- local gmailwidget = wibox.widget.textbox()
     -- vicious.register(gmailwidget, vicious.widgets.gmail, " Gmail: ${count} | ")
+    local emojiwidget = wibox.widget.textbox()
+    emojiwidget:set_font("Monospace 10px")
+    -- vicious.register(emojiwidget, function() return {emoji[math.random(table.maxn(emoji))]} end, " $1 |", 5)
     local cpuwidget = wibox.widget.textbox()
     vicious.register(cpuwidget, vicious.widgets.cpu, " CPU: $1% | ")
     local memwidget = wibox.widget.textbox()
     vicious.register(memwidget, vicious.widgets.mem, "Mem: $1% | ")
     local right_layout = wibox.layout.fixed.horizontal()
     -- right_layout:add(gmailwidget)
+    right_layout:add(emojiwidget)
     right_layout:add(cpuwidget)
     right_layout:add(memwidget)
     if s == 1 then right_layout:add(wibox.widget.systray()) end
@@ -381,6 +475,12 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
+    { rule = { class = "Pidgin" },
+      properties = { floating = true } },
+    { rule = { class = "Skype" },
+      properties = { floating = true } },
+    { rule = { class = "Plugin-container" },
+      properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
@@ -459,13 +559,3 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-
--- -- hide cursor after inactive for 5 seconds
--- awful.util.spawn_with_shell("unclutter -idle 5 -root")
--- 
--- awful.util.spawn_with_shell("ibus-daemon")
--- awful.util.spawn_with_shell("skype")
--- awful.util.spawn_with_shell("wicd-gtk --tray")
--- 
--- -- for taking screenshots.
--- awful.util.spawn_with_shell("shutter --min_at_startup")
