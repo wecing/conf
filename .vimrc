@@ -35,7 +35,7 @@ filetype plugin indent on    " required
 """""Put your non-Plugin stuff after this line"""""
 
 "Powerline font patch"
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 if g:airline_powerline_fonts
     if system("uname") == "Darwin\n"
         set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
