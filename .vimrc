@@ -79,7 +79,7 @@ set guioptions-=m "menu bar"
 set guioptions-=r "scroll bar"
 
 "shell-like command completion"
-set wildmode=longest:list,full
+set wildmode=longest,list
 
 "color scheme under linux"
 if has('gui_running')
