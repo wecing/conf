@@ -27,6 +27,8 @@ Plugin 'scala/scala-tool-support', {'rtp': 'tool-support/vim'}
 Plugin 'solarnz/thrift.vim'
 Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'andy-morris/alex.vim'
+Plugin 'vim-scripts/happy.vim'
 
 "All of your Plugins must be added before the following line"
 call vundle#end()
