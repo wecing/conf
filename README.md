@@ -2,14 +2,19 @@
 
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-then inside vim, run `:PluginInstall`
+then open vim and run `:PluginInstall`
 
-#### font for vim-airline:
+#### powerline fonts:
 
 	git clone https://github.com/Lokaltog/powerline-fonts.git
 
-### Solarized for Terminal.app
+### tmux plugin manager:
 
-copied from `https://github.com/tomislav/osx-terminal.app-colors-solarized`
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
+to install plugins: `prefix + I`
+
+-----
+
+solarized theme for Terminal.app is copied from [tomislav/osx-terminal.app-colors-solarized](https://github.com/tomislav/osx-terminal.app-colors-solarized).
 
