@@ -7,6 +7,9 @@ alias ggrep='git grep -En'
 if [ -e '/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash' ]; then
     source '/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash'
     source '/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh'
+elif [ -e '/usr/local/etc/bash_completion.d/git-prompt.sh' ]; then
+    source '/usr/local/etc/bash_completion.d/git-completion.bash'
+    source '/usr/local/etc/bash_completion.d/git-prompt.sh'
 fi
 
 export EDITOR='vim'
