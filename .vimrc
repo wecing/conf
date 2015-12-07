@@ -175,3 +175,6 @@ if !has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+"fix backspace behavior"
+set backspace=indent,eol,start

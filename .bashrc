@@ -2,6 +2,7 @@ alias vi='vim'
 # alias vim='/usr/local/Cellar/vim/7.4.488/bin/vim'
 alias ls='ls -BG'
 alias ggrep='git grep -En'
+alias mvim='open -a MacVim'
 
 # enable git branch info in PS1 and git completion
 if [ -e '/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash' ]; then
