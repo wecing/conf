@@ -104,8 +104,8 @@ set mouse=a
 "incremental searching. search even when typing has not finished."
 set incsearch
 
-"show line number."
-set number
+" "show line number."
+" set number
 
 "enable code folding. no folding by default"
 set foldmethod=syntax
@@ -179,3 +179,6 @@ endif
 
 "fix backspace behavior"
 set backspace=indent,eol,start
+
+"use single \ as leader key for easymotion"
+map <Leader> <Plug>(easymotion-prefix)
