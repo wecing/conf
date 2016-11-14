@@ -18,6 +18,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'embear/vim-localvimrc'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'vim-scripts/camelcasemotion'
 
 "Plugin 'Shougo/vimproc'
 "Plugin 'Shougo/vimshell.vim'
