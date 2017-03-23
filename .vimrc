@@ -31,6 +31,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'andy-morris/alex.vim'
 Plugin 'vim-scripts/happy.vim'
 Plugin 'wecing/cup.vim'
+Plugin 'wecing/vim-fsharp'
 Plugin 'Superbil/llvm.vim'
 
 "All of your Plugins must be added before the following line"
@@ -189,4 +190,10 @@ map <Leader> <Plug>(easymotion-prefix)
 augroup filetype
     au! BufRead,BufNewFile *.ll     set filetype=llvm
     au! BufRead,BufNewFile *.td     set filetype=tablegen
+augroup END
+
+"F# syntax highlighting"
+augroup filetype
+    au! BufRead,BufNewFile *.fs,*.fsi,*.fsx     set filetype=fsharp
+    au! BufRead,BufNewFile *.fsproj             set filetype=xml
 augroup END
