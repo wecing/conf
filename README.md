@@ -14,6 +14,13 @@ then open vim and run `:PluginInstall`
 
 to install plugins: `prefix + I`
 
+### dircolors for Linux:
+
+    wget https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark -O ~/.dircolors
+
+    # add to bash config file
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+
 -----
 
 solarized theme for Terminal.app is copied from [tomislav/osx-terminal.app-colors-solarized](https://github.com/tomislav/osx-terminal.app-colors-solarized).
