@@ -1,42 +1,52 @@
-"vundle init"
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"install vim-plug"
+if !has('nvim')
+  if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+else
+  if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+    silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+endif
 
-"let Vundle manage Vundle, required"
-"Keep Plugin commands between vundle#begin/end."
-Plugin 'gmarik/Vundle.vim'
+"vim-plug init"
+if !has('nvim')
+  call plug#begin('~/.vim/plugged')
+else
+  call plug#begin('~/.local/share/nvim/plugged')
+endif
 
 "pain in the ass."
-"Plugin 'Valloric/YouCompleteMe'"
-"Plugin 'oblitum/rainbow'
+"Plug 'Valloric/YouCompleteMe'"
+"Plug 'oblitum/rainbow'
 
-Plugin 'bling/vim-airline'
-Plugin 'vim-scripts/ScrollColors'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'embear/vim-localvimrc'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'vim-scripts/camelcasemotion'
+Plug 'bling/vim-airline'
+Plug 'vim-scripts/ScrollColors'
+Plug 'flazz/vim-colorschemes'
+Plug 'scrooloose/nerdtree'
+Plug 'embear/vim-localvimrc'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'vim-scripts/camelcasemotion'
 
-"Plugin 'Shougo/vimproc'
-"Plugin 'Shougo/vimshell.vim'
+"Plug 'Shougo/vimproc'
+"Plug 'Shougo/vimshell.vim'
 
-Plugin 'wting/rust.vim'
-Plugin 'scala/scala-tool-support', {'rtp': 'tool-support/vim'}
-Plugin 'solarnz/thrift.vim'
-Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'andy-morris/alex.vim'
-Plugin 'vim-scripts/happy.vim'
-Plugin 'wecing/cup.vim'
-Plugin 'wecing/vim-fsharp'
-Plugin 'Superbil/llvm.vim'
+Plug 'wting/rust.vim'
+Plug 'scala/scala-tool-support', {'rtp': 'tool-support/vim'}
+Plug 'solarnz/thrift.vim'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'plasticboy/vim-markdown'
+Plug 'andy-morris/alex.vim'
+Plug 'vim-scripts/happy.vim'
+Plug 'wecing/cup.vim'
+Plug 'wecing/vim-fsharp'
+Plug 'Superbil/llvm.vim'
 
-"All of your Plugins must be added before the following line"
-call vundle#end()
-filetype plugin indent on    " required
+call plug#end()
 
 """""Put your non-Plugin stuff after this line"""""
 
