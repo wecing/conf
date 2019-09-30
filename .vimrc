@@ -20,10 +20,6 @@ else
   call plug#begin('~/.local/share/nvim/plugged')
 endif
 
-"pain in the ass."
-"Plug 'Valloric/YouCompleteMe'"
-"Plug 'oblitum/rainbow'
-
 Plug 'bling/vim-airline'
 Plug 'vim-scripts/ScrollColors'
 Plug 'flazz/vim-colorschemes'
@@ -31,9 +27,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'embear/vim-localvimrc'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-scripts/camelcasemotion'
-
-"Plug 'Shougo/vimproc'
-"Plug 'Shougo/vimshell.vim'
 
 Plug 'wting/rust.vim'
 Plug 'scala/scala-tool-support', {'rtp': 'tool-support/vim'}
@@ -45,6 +38,7 @@ Plug 'vim-scripts/happy.vim'
 Plug 'wecing/cup.vim'
 Plug 'wecing/vim-fsharp'
 Plug 'Superbil/llvm.vim'
+Plug 'dag/vim-fish'
 
 call plug#end()
 
