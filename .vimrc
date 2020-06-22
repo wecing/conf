@@ -27,9 +27,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'embear/vim-localvimrc'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-scripts/camelcasemotion'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'wting/rust.vim'
-Plug 'scala/scala-tool-support', {'rtp': 'tool-support/vim'}
+Plug 'rust-lang/rust.vim'
+Plug 'derekwyatt/vim-scala'
 Plug 'solarnz/thrift.vim'
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'plasticboy/vim-markdown'
@@ -39,6 +40,7 @@ Plug 'wecing/cup.vim'
 Plug 'wecing/vim-fsharp'
 Plug 'Superbil/llvm.vim'
 Plug 'dag/vim-fish'
+Plug 'uarun/vim-protobuf'
 
 call plug#end()
 
