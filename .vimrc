@@ -95,7 +95,9 @@ set guioptions-=r "scroll bar"
 set wildmode=longest,list
 
 "color scheme"
-if has('gui_running')
+if has('gui_running') || system("uname") == "Darwin\n"
+    "vim/nvim on mac does not come with +termguicolors but for some reasons
+    "it's not needed at all."
     set background=dark
     colorscheme solarized
 elseif exists('+termguicolors')
@@ -103,12 +105,7 @@ elseif exists('+termguicolors')
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
 
-    if system("uname") == "Darwin\n"
-        set background=dark
-        colorscheme solarized
-    else
-        colorscheme onehalfdark
-    endif
+    colorscheme onehalfdark
 endif
 
 "enable usage of mouse"
