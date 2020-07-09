@@ -1,4 +1,8 @@
-#### powerline fonts:
+### one half theme for terminal emulators:
+
+    [sonph/onehalf](https://github.com/sonph/onehalf)
+
+### powerline fonts:
 
 	git clone https://github.com/Lokaltog/powerline-fonts.git
 
@@ -8,7 +12,7 @@
 
 to install plugins: `prefix + I`
 
-### dircolors for Linux:
+### solarized dircolors for Linux:
 
     wget https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark -O ~/.dircolors
 

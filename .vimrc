@@ -23,6 +23,7 @@ endif
 Plug 'bling/vim-airline'
 Plug 'vim-scripts/ScrollColors'
 Plug 'flazz/vim-colorschemes'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'scrooloose/nerdtree'
 Plug 'embear/vim-localvimrc'
 Plug 'Lokaltog/vim-easymotion'
@@ -93,18 +94,21 @@ set guioptions-=r "scroll bar"
 "shell-like command completion"
 set wildmode=longest,list
 
-"color scheme under linux"
+"color scheme"
 if has('gui_running')
-    "colorscheme candycode
-    "colorscheme mustang
     set background=dark
     colorscheme solarized
-else
-    "vibrantink tir_black slate mustang up"
-    "colorscheme mustang
-    "let g:solarized_termtrans=1
-    set background=dark
-    colorscheme solarized
+elseif exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+
+    if system("uname") == "Darwin\n"
+        set background=dark
+        colorscheme solarized
+    else
+        colorscheme onehalfdark
+    endif
 endif
 
 "enable usage of mouse"
@@ -143,12 +147,6 @@ set laststatus=2
 "     set transparency=15
 " endif
 
-" "YCM, stop asking"
-" let g:ycm_confirm_extra_conf = 0
-" "YCM, don't leave the preview window open"
-" let g:ycm_autoclose_preview_window_after_completion = 1
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-
 " "open NERDTree on vim startup, if no file is specified"
 " autocmd StdinReadPre * let s:std_in=1
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -161,11 +159,6 @@ nmap <F1> :NERDTreeToggle<CR>
 
 "no more than 80 chars each line"
 set colorcolumn=80
-"if has("gui_running")
-"  highlight ColorColumn guibg=#101010
-"else
-"  highlight ColorColumn ctermbg=DarkGrey
-"endif
 
 "show preview window at the bottom."
 "set splitbelow
