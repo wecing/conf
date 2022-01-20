@@ -124,6 +124,9 @@ set foldlevel=99
 "Highlight current line. This only works for MacVim for the current theme."
 set cursorline
 
+"use F2 to toggle paste mode"
+set pastetoggle=<F2>
+
 "emacs-style macro keybinding"
 nmap <F3> qb
 nmap <F4> q
