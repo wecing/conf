@@ -1,6 +1,6 @@
 ### one half theme for terminal emulators:
 
-    [sonph/onehalf](https://github.com/sonph/onehalf)
+[sonph/onehalf](https://github.com/sonph/onehalf)
 
 ### powerline fonts:
 
