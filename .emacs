@@ -4,8 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(consult lsp-mode lsp-ui marginalia orderless timu-rouge-theme
-	     use-package vertico zig-mode)))
+   '(lsp-ui marginalia minions orderless timu-rouge-theme vertico
+	    zig-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -37,7 +37,27 @@
 (setq initial-scratch-message nil)
 (setq initial-major-mode 'fundamental-mode)
 
-;;; other packages
+;; simplify mode line
+(setq-default mode-line-format
+  '("%e" mode-line-front-space
+    (:propertize
+     ("" mode-line-mule-info mode-line-client mode-line-modified
+      mode-line-remote)
+     display (min-width (5.0)))
+    mode-line-frame-identification mode-line-buffer-identification
+    "   " mode-line-position mode-line-modes mode-line-end-spaces))
+
+;;; other tweaks
+
+;; always follow symlinks, do not ask
+(setq vc-follow-symlinks t)
+
+;; must put these packages in `~/.local/bin`:
+;;   zig, zls
+(setenv "PATH" (concat (getenv "PATH") ":" (getenv "HOME") "/.local/bin"))
+(setq exec-path (append exec-path (list (concat (getenv "HOME") "/.local/bin"))))
+
+;;; packages
 
 ;; fuzzy search commands
 (use-package orderless
@@ -55,6 +75,10 @@
   :bind (:map minibuffer-local-map
          ("M-A" . marginalia-cycle))
   :init (marginalia-mode))
+
+;; hide list of minor modes
+(use-package minions
+  :init (minions-mode))
 
 ;; LSP
 (use-package lsp-mode
