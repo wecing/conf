@@ -28,7 +28,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'embear/vim-localvimrc'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-scripts/camelcasemotion'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'rust-lang/rust.vim'
 Plug 'derekwyatt/vim-scala'
