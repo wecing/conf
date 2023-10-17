@@ -4,8 +4,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(lsp-ui marginalia minions orderless timu-rouge-theme vertico
-	    zig-mode)))
+   '(back-button dimmer doom-modeline exec-path-from-shell lsp-ui magit
+                 marginalia minions nerd-icons-corfu orderless
+                 timu-rouge-theme vertico zig-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -25,10 +26,6 @@
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
-;; macos titlebar settings
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-(set-frame-parameter nil 'ns-appearance 'dark) ; dark themes only
-
 (use-package timu-rouge-theme
   :config (load-theme 'timu-rouge t)
   :custom (timu-rouge-mode-line-border t))
@@ -37,25 +34,35 @@
 (setq initial-scratch-message nil)
 (setq initial-major-mode 'fundamental-mode)
 
-;; simplify mode line
-(setq-default mode-line-format
-  '("%e" mode-line-front-space
-    (:propertize
-     ("" mode-line-mule-info mode-line-client mode-line-modified
-      mode-line-remote)
-     display (min-width (5.0)))
-    mode-line-frame-identification mode-line-buffer-identification
-    "   " mode-line-position mode-line-modes mode-line-end-spaces))
+;; macos specific settings
+(when (equal system-type 'darwin)
+  ;; titlebar settings
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (set-frame-parameter nil 'ns-appearance 'dark) ; dark themes only
+
+  ;; fullscreen with Cmd-ctrl-f
+  (bind-key "C-s-f" 'toggle-frame-fullscreen))
 
 ;;; other tweaks
 
 ;; always follow symlinks, do not ask
 (setq vc-follow-symlinks t)
 
-;; must put these packages in `~/.local/bin`:
-;;   zig, zls
-(setenv "PATH" (concat (getenv "PATH") ":" (getenv "HOME") "/.local/bin"))
-(setq exec-path (append exec-path (list (concat (getenv "HOME") "/.local/bin"))))
+;; always show column number
+(setq column-number-mode t)
+
+;; do not generate xxx~ files
+(setq make-backup-files nil)
+
+;; do not use tab
+(setq-default indent-tabs-mode nil)
+
+;; disable eshell wrapper for `make`
+(fmakunbound 'eshell/make)
+
+;; fix PATH and exec-path, necessary on mac
+(use-package exec-path-from-shell
+  :init (exec-path-from-shell-initialize))
 
 ;;; packages
 
@@ -76,9 +83,38 @@
          ("M-A" . marginalia-cycle))
   :init (marginalia-mode))
 
+;; jump backward / forward
+(use-package back-button
+  :custom (back-button-no-wrap t)
+  :init
+  (back-button-mode 1)
+  (global-set-key [f6] 'back-button-global-backward)
+  (global-set-key [f7] 'back-button-global-forward))
+
+;; magit
+(use-package magit)
+
+;; highlight changed lines
+;; (use-package diff-hl
+;;   :init (global-diff-hl-mode))
+
+;; better modeline
+(use-package doom-modeline
+  :init
+  (doom-modeline-mode 1)
+  
+  (setq display-time-default-load-average nil) ; hide CPU usage
+  (display-time-mode 1)
+  (display-battery-mode 1))
+(use-package nerd-icons)
 ;; hide list of minor modes
-(use-package minions
-  :init (minions-mode))
+;; (use-package minions
+;;   :init (minions-mode))
+
+;; highlight selected buffer
+(use-package dimmer
+  :custom (dimmer-fraction 0.3)
+  :init (dimmer-mode t))
 
 ;; LSP
 (use-package lsp-mode

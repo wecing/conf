@@ -2,6 +2,12 @@
 
 [sonph/onehalf](https://github.com/sonph/onehalf)
 
+### emacs mode line icons:
+
+[nerdfonts](https://www.nerdfonts.com/font-downloads)
+
+search for `Symbols Nerd Font`.
+
 ### powerline fonts:
 
 	git clone https://github.com/Lokaltog/powerline-fonts.git
