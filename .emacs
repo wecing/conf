@@ -4,9 +4,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(back-button dimmer doom-modeline exec-path-from-shell lsp-ui magit
-                 marginalia minions nerd-icons-corfu orderless
-                 timu-rouge-theme vertico zig-mode)))
+   '(back-button dimmer doom-modeline exec-path-from-shell hl-todo
+                 lsp-treemacs lsp-ui magit marginalia nerd-icons-corfu
+                 orderless timu-rouge-theme treemacs vertico zig-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -98,6 +98,10 @@
 ;; (use-package diff-hl
 ;;   :init (global-diff-hl-mode))
 
+;; highlight certain keywords
+(use-package hl-todo
+  :init (hl-todo-mode 1))
+
 ;; better modeline
 (use-package doom-modeline
   :init
@@ -128,6 +132,9 @@
 ;; lsp-ui
 (use-package lsp-ui
   :hook (lsp-mode . lsp-ui-mode))
+;; treemacs, lsp-treemacs
+(use-package treemacs)
+(use-package lsp-treemacs)
 
 ;; zig
 (use-package zig-mode)
