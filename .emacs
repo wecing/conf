@@ -58,7 +58,7 @@
 (setq-default indent-tabs-mode nil)
 
 ;; disable eshell wrapper for `make`
-(fmakunbound 'eshell/make)
+(add-hook 'eshell-mode-hook (lambda () (fmakunbound 'eshell/make)))
 
 ;; fix PATH and exec-path, necessary on mac
 (use-package exec-path-from-shell
@@ -100,25 +100,26 @@
 
 ;; highlight certain keywords
 (use-package hl-todo
-  :init (hl-todo-mode 1))
+  :init (global-hl-todo-mode 1))
 
 ;; better modeline
 (use-package doom-modeline
   :init
   (doom-modeline-mode 1)
   
-  (setq display-time-default-load-average nil) ; hide CPU usage
-  (display-time-mode 1)
-  (display-battery-mode 1))
+  ;; (setq display-time-default-load-average nil) ; hide CPU usage
+  ;; (display-time-mode 1)
+  ;; (display-battery-mode 1)
+  )
 (use-package nerd-icons)
 ;; hide list of minor modes
 ;; (use-package minions
 ;;   :init (minions-mode))
 
 ;; highlight selected buffer
-(use-package dimmer
-  :custom (dimmer-fraction 0.3)
-  :init (dimmer-mode t))
+;; (use-package dimmer
+;;   :custom (dimmer-fraction 0.3)
+;;   :init (dimmer-mode t))
 
 ;; LSP
 (use-package lsp-mode
