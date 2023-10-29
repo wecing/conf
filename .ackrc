@@ -1,7 +1,0 @@
---ignore-dir=.git
---ignore-dir=.svn
-
---ignore-dir=.idea
-
---ignore-dir=.pants.d
---ignore-dir=.ci.info
