@@ -1,3 +1,5 @@
+#!/bin/bash
+
 es=(
     '|∀ﾟ'
     '(´ﾟДﾟ`)'
@@ -87,6 +89,11 @@ es=(
     '⊂彡☆))∀`)'
     '(´∀((☆ミつ'
 )
+
+# OpenBSD default installation does not have the necessary fonts.
+if [[ `uname` = 'OpenBSD' ]]; then
+    exit
+fi
 
 ra=`od -An -N1 -i /dev/random`
 echo ${es[`expr $ra % ${#es[@]}`]}
