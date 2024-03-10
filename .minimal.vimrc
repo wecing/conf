@@ -21,7 +21,7 @@ set hlsearch
 noremap ; :nohlsearch<cr>
 
 "ignore case during searching."
-set ic
+"set ic
 
 "incremental searching. search even when typing has not finished."
 set incsearch
