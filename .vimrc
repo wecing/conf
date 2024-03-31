@@ -46,3 +46,6 @@ hi ColorColumn cterm=NONE ctermfg=NONE ctermbg=0
 
 "fix backspace behavior"
 set backspace=indent,eol,start
+
+"bash-style command line autocomplete"
+set wildmode=list:longest
