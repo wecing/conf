@@ -4,9 +4,9 @@ syntax off
 "tab stuff"
 set expandtab
 autocmd FileType make setlocal noexpandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=8       "\t display length"
+set shiftwidth=2    "automatic indent depth"
+set softtabstop=-1  "<TAB> and <BS> length; -1 means follow shiftwidth"
 
 "copy indention of current line to the next line"
 set autoindent
