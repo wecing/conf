@@ -3,10 +3,13 @@ syntax off
 
 "tab stuff"
 set expandtab
-autocmd FileType make setlocal noexpandtab
 set tabstop=8       "\t display length"
 set shiftwidth=2    "automatic indent depth"
 set softtabstop=-1  "<TAB> and <BS> length; -1 means follow shiftwidth"
+
+"language specific tab settings"
+autocmd FileType make setlocal noexpandtab
+autocmd BufEnter,BufNew *.ha setlocal noexpandtab
 
 "copy indention of current line to the next line"
 set autoindent
