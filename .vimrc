@@ -20,8 +20,12 @@ set mouse=
 "highlight all search results"
 set hlsearch
 
+"reload changed files after executing external commands, e.g. :make"
+set autoread
+
 "cancel searching with ;"
-noremap ; :nohlsearch<cr>
+"check for changed files when ; is pressed"
+noremap ; :nohlsearch \| checktime<cr>
 
 "ignore case during searching."
 "set ic
